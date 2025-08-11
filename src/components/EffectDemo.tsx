@@ -26,12 +26,17 @@ export default function EffectDemo() {
         setData(data)
       } catch (err) {
         // AbortController 취소는 에러로 표시하지 않음
-        const anyErr = err as any
-        if (axios.isCancel?.(anyErr) || anyErr?.code === 'ERR_CANCELED' || anyErr?.name === 'CanceledError') {
-          // 요청이 취소됨(라우트 전환/StrictMode 등) → 무시
+        const unknownErr = err as unknown
+
+        if (
+          axios.isCancel(unknownErr) ||
+          (typeof unknownErr === 'object' &&
+            unknownErr !== null &&
+            'name' in unknownErr &&
+            (unknownErr as { name?: string }).name === 'CanceledError')
+        ) {
           return
         }
-
         const axErr = err as AxiosError
         // HTTP 에러면 상태코드 표시, 아니면 일반 메시지
         if (axErr.response) {

@@ -7,6 +7,7 @@ export const rootRoute = createRootRoute({
       <nav style={{ marginBottom: 16 }}>
         <Link to="/">Home</Link> {' | '}
         <Link to="/effect">Effect</Link> {' | '}
+        <Link to="/usememo">UseMemo</Link> {' | '}
       </nav>
       <Outlet />
     </div>

@@ -1,0 +1,5 @@
+{
+  "$schema": "./node_modules/@tanstack/router-cli/dist/schema.json",
+  "routesDirectory": "src/routes",
+  "generatedRouteTree": "src/routeTree.gen.ts" 
+}

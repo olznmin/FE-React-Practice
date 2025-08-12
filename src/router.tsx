@@ -4,11 +4,13 @@ import { rootRoute } from './routes/__root'
 import { indexRoute } from './routes/index'
 import { effectRoute } from './routes/effect'
 import { usememoRoute } from './routes/usememo'
+import { tableRoute } from './routes/table'
 
 const routeTree = rootRoute.addChildren([
   indexRoute,
   effectRoute,
-  usememoRoute                                          // ✅ 이 줄
+  usememoRoute,
+  tableRoute
 ])
 
 export const router = createRouter({ routeTree })

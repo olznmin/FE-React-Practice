@@ -8,6 +8,7 @@ export const rootRoute = createRootRoute({
         <Link to="/">Home</Link> {' | '}
         <Link to="/effect">Effect</Link> {' | '}
         <Link to="/usememo">UseMemo</Link> {' | '}
+        <Link to="/table">Table</Link>
       </nav>
       <Outlet />
     </div>

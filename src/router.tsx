@@ -5,12 +5,16 @@ import { indexRoute } from './routes/index'
 import { effectRoute } from './routes/effect'
 import { usememoRoute } from './routes/usememo'
 import { tableRoute } from './routes/table'
+import { usequeryRoute } from './routes/usequery'
+import { usesuspensequeryRoute } from './routes/usesuspensequery'
 
 const routeTree = rootRoute.addChildren([
   indexRoute,
   effectRoute,
   usememoRoute,
-  tableRoute
+  tableRoute,
+  usequeryRoute,
+  usesuspensequeryRoute
 ])
 
 export const router = createRouter({ routeTree })
